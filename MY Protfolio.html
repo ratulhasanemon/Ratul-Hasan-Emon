@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratul Hasan Emon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0c1d24, #184452, #2c5364);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0D47A1;
+            padding: 15px 30px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff9900;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-link {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .search-box input {
+            padding: 6px 15px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .buttons {
+            margin-left: 10px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 60px auto;
+            width: 90%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            cursor: default;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgb(0, 0, 0);
+            color: #ff9100;
+        }
+
+        .hero-text h3 {
+            font-size: 24px;
+            color: #00e5ff;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            background-color: #00e5ff;
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #00bcd4;
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #00e5ff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #02c6db;
+            color: #000;
+            transform: translateY(-5px);
+            transition: 0.5s;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 300px;
+            cursor: default;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #02b0c4;
+            box-shadow: 0 0 30px #00e5ff88;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .hero-image img:hover{
+            transform: scale(1.1);
+        }
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        /* about */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .about {
+            max-width: 1200px;
+            margin: 60px auto;
+            width: 90%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            display: flex;
+            margin-top: 110px;
+        }
+        .image {
+            flex: 1;
+            justify-content: center;
+            min-width: 300px;
+            margin-left: 50px;
+            margin-bottom: 30px;
+            cursor: default;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+        }
+
+        .image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid #8d0c0c;
+            box-shadow: 0 0 30px #ff131388;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .image img:hover{
+            transform: scale(1.1);
+        }
+
+        .icon a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid cyan;
+            border-radius: 50%;
+            font-size: 20px;
+            color: cyan;
+            text-decoration: none;
+            margin-top: 40px;
+            margin-left: 25px;
+        }
+
+        .icon a:hover {
+            background-color: #0a2075;
+            color: #ffffff;
+            box-shadow: 0 0 20px cyan;
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+
+        .text {
+            flex: 1;
+            min-width: 300px;
+            cursor: default;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+        }
+
+        .text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgb(0, 0, 0);
+            color: #ff9100;
+        }
+
+        .text h3 {
+            font-size: 24px;
+            color: #d80000;
+            margin-bottom: 20px;
+        }
+
+        .text p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .btn {
+            padding: 15px;
+            border-radius: 4px;
+            border: none;
+            background-color: #c12000;
+            color: #ffffff;
+            font-size: 15px;
+            box-shadow: 0 0 20px rgb(35, 59, 70);
+        }
+
+        .btn:hover {
+            background-color: #b40600;
+            transform: translateY(-5px);
+            transition: 0.5s;
+            box-shadow: 0 0 20px red;
+        }
+
+        /* services */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 1px;
+            margin-top: -150px;
+            height: 600px;
+            margin-bottom: 140px;
+        }
+        /* 1st */
+        .id {
+            text-align: center;
+            background-color: rgb(219, 216, 216);
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 110%;
+            box-shadow: 0 0 10px cyan;
+            border: 1px solid black;
+        }
+
+        .id:hover {
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+
+        .id svg {
+            font-size: 30px;
+            margin-top: -30px;
+        }
+
+        .id h2 {
+            font-family: sans-serif;
+            padding: 20px;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .id h4 {
+            text-align: center;
+        }
+
+        .id p {
+            font-family: sans-serif;
+            padding: 25px;
+            color: rgb(116, 116, 116);
+        }
+
+        .id a {
+            font-family: sans-serif;
+            font-size: 20px;
+            color: rgb(174, 1, 1);
+            text-decoration: none;
+        }
+
+        /* 2nd */
+        .fo {
+            text-align: center;
+            background-color: rgb(219, 216, 216);
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 45%;
+            box-shadow: 0 0 10px rgb(81, 173, 173);
+            border: 1px solid black;
+        }
+
+        .fo:hover {
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+
+        .fo svg {
+            font-size: 30px;
+            margin-top: -30px;
+        }
+
+        .fo h2 {
+            font-family: sans-serif;
+            padding: 20px;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .txt h4 {
+            color: #ff9100;
+            font-size: 40px;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 150px;
+            text-shadow: 0 0 20px rgb(0, 0, 0);
+        }
+
+        .fo p {
+            font-family: sans-serif;
+            padding: 25px;
+            color: rgb(116, 116, 116);
+        }
+
+        .fo a {
+            font-family: sans-serif;
+            font-size: 20px;
+            color: rgb(174, 1, 1);
+            text-decoration: none;
+        }
+
+        /* 3rd */
+        .or {
+            text-align: center;
+            background-color: rgb(219, 216, 216);
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 110%;
+            box-shadow: 0 0 10px cyan;
+            border: 1px solid black;
+        }
+
+        .or:hover {
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+
+        .or svg {
+            font-size: 30px;
+            margin-top: -30px;
+        }
+
+        .or h2 {
+            font-family: sans-serif;
+            padding: 20px;
+            font-size: 25px;
+            color: #000;
+        }
+
+        .or p {
+            font-family: sans-serif;
+            padding: 25px;
+            color: rgb(116, 116, 116);
+        }
+
+        .or a {
+            font-family: sans-serif;
+            font-size: 20px;
+            color: rgb(174, 1, 1);
+            text-decoration: none;
+        }
+
+        /* skills.............. */
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .skill{
+            display: flex;
+            gap: 30px;
+            padding: 50px;
+        }
+        .heading h1{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 50px;
+            color: #ff9100;
+            text-shadow: 0 0 20px black;
+        }
+        .child_5{
+            cursor: default;
+            opacity: 0;
+            animation: slideRight 1s ease forwards; 
+        }
+        .child_6{
+            cursor: default;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+        }
+         .child_5 h2{
+            font-size: 50px;
+            font-family: sans-serif;
+            text-shadow: 0 0 20px black;
+            color: #c12000;
+        }
+        .child_5 p{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: rgb(184, 184, 184);
+            margin-top: 20px;
+            margin-right: 120px;
+            line-height: 2;
+        }
+        .child_5 button{
+            margin-top: 30px;
+            height: 70px;
+            border-radius: 50px;
+            width: 200px;
+            background-color: #3f7bfc;
+            border: 1px solid gray;
+            color: #ffffff;
+            font-size: 15px;
+        }
+         .child_5 button:hover{
+            background-color: #1139db;
+            box-shadow: 0 0 20px rgb(0, 60, 255);
+        }
+         .child_6{
+            display: flex;
+            gap: 100px;
+            margin-right: 50px;
+            padding: 29px 0 29 29;
+        }
+         .child_6 h1{
+            font-size: 60px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #3f7bfc;
+            text-shadow: 0 0 20px rgb(18, 18, 18);
+            margin-top: 30px;
+        }
+         .child_6 p{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: 'open sans' sans-serif;
+            font-size: 30px;
+            text-shadow: 0 0 20px rgb(255, 0, 0);
+        }
+        /*...project...*/
+        .project{
+           margin-bottom: 100px;
+        }
+        .work{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .work img{
+            width: 350px;
+            height: 250px;
+            border: 2px solid rgb(76, 23, 23);
+            border-radius: 13px;
+            box-shadow: 4px 7px 7px 0px rgb(30, 30, 30);
+            cursor: pointer;
+            margin: 10px;
+            transition: 400ms;
+        }
+        .work img:hover{
+            filter: grayscale(1);
+            transform: scale(1.03);
+        }
+        .project h1{
+            font-size: 50px;
+            text-align: center;
+            margin: 30px;
+            color: #ff9100;
+            text-shadow: 0 0 20px black;
+        }
+        /*...contact...*/
+        .container{
+            margin-top: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256"><defs><path id="skillIconsRemixDark0" fill="#fff" d="M187.903 168.726c1.361 17.488 1.361 25.686 1.361 34.634h-40.462c0-1.949.035-3.732.07-5.54c.11-5.621.224-11.482-.687-23.318c-1.203-17.329-8.665-21.179-22.386-21.179H62.16v-31.528h65.565c17.331 0 25.997-5.272 25.997-19.231c0-12.275-8.666-19.713-25.997-19.713H62.16V52h72.786c39.236 0 58.734 18.532 58.734 48.134c0 22.142-13.72 36.582-32.256 38.989c15.647 3.129 24.794 12.034 26.479 29.603"/></defs><g fill="none"><rect width="256" height="256" fill="#242938" rx="60"/><use href="#skillIconsRemixDark0" fill-rule="evenodd" clip-rule="evenodd"/><use href="#skillIconsRemixDark0" fill-rule="evenodd" clip-rule="evenodd"/><path fill="#fff" d="M62.16 203.36v-23.503h42.783c7.146 0 8.698 5.3 8.698 8.461v15.042z"/><path stroke="#fff" stroke-opacity="0.8" stroke-width="0.32" d="M62 203.36v.16h51.801v-15.202c0-1.602-.392-3.755-1.701-5.512c-1.314-1.765-3.539-3.109-7.157-3.109H62z"/></g></svg>
+            </div>
+            <h1> website</h1> 
+        </div>
+
+        <div class="nav-link">
+            <a href="#home" >Home</a>
+            <a href="#about">About</a>
+            <a href="#Services">Services</a>
+            <a href="#Skills">Skills</a>
+            <a href="#proj">Project</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+        </div>
+    </nav>
+    <!-- home -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Hi, I'm Ratul Hasan</h1>
+            <h3>Web Developer | HTNL,CSS</h3>
+            <p>I Designing,Build-ing,and Maintaining web-sites and web Application.I use programming languages like
+                HTML,CSS and JavaScript.</p>
+
+            <div class="buttons">
+                <a href="#contact"><button class="btn-primary ">📨 Hire Me</button></a>
+                
+                <button class="btn-secondary">💼 View Portfolio</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./img/em.jpg" alt="">
+        </div>
+    </section>
+    <hr>
+    <!-- home end -->
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="image">
+            <img src="./img/IMG_9473.JPG" alt="">
+            <div class="icon">
+                <a href="https://www.facebook.com/ratul.hasan.emon.547810" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ratul_hasan_emon?igsh=ODRiMnpoMHVqOHhy&utm_source=qr"
+                    target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.threads.com/@ratul_hasan_emon?igshid=NTc4MTIwNjQ2YQ==" target="_blank"><i
+                        class="fa-brands fa-threads"></i></a>
+                <a href="https://www.tiktok.com/@ratul_hasan__emon?_t=ZS-8xLFrxSDNKR&_r=1" target="_blank"><i
+                        class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <div class="text">
+            <h1>About Me</h1>
+            <h3>Full stack Developer!</h3>
+            <p>I am a skilled web designer with over 3 years of experience in the industry.Web development is the
+                process of creating, building, and maintaining websites and web applications. It involves a range of
+                tasks, from the visual design and user interface to the underlying code and server-side logic.
+                Essentially, it's the practice of bringing websites to life and ensuring they function smoothly for
+                users.Encompasses both front-end and back-end development, giving developers a broad understanding of
+                the entire web development process. </p>
+            <div class="button">
+                <a href="https://www.w3schools.com/whatis/whatis_fullstack.asp" target="_blank"><button class="btn">More
+                        About Me</button></a>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- services -->
+    <section class="container" id="Services">
+
+        <div class="hero">
+
+            <div class="child_1">
+                <div class="id">
+                    <form action="form">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256">
+                            <g fill="none">
+                                <rect width="256" height="256" fill="#e14e1d" rx="60" />
+                                <path fill="#fff"
+                                    d="m48 38l8.61 96.593h110.71l-3.715 41.43l-35.646 9.638l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l65.51-18.172l8.783-98.061H85.824l-2.923-32.71h122.238L208 38z" />
+                                <path fill="#ebebeb"
+                                    d="M128 38H48l8.61 96.593H128v-31.938H85.824l-2.923-32.71H128zm0 147.647l-.041.014l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l.049-.014z" />
+                            </g>
+                        </svg>
+                        <h2>Web Deasign</h2>
+                        <p>Web design is the process of planning, conceptualizing, and building the visual and
+                            functional elements of a website.</p>
+                        <a href="https://www.google.com/search?q=what+is+web+design&oq=&gs_lcrp=EgZjaHJvbWUqCQgCECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQk5NjI1OWowajeoAgiwAgHxBQ2NNw9b1UEM&sourceid=chrome&ie=UTF-8"
+                            target="_blank">more</a>
+                    </form>
+                </div>
+
+            </div>
+            <!-- childe_2 -->
+            <div class="child_2">
+                <div class="txt">
+                    <h4>My Services</h4>
+                </div>
+                <div class="fo">
+                    <form action="form">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256">
+                            <g fill="none">
+                                <rect width="256" height="256" fill="#0277bd" rx="60" />
+                                <path fill="#ebebeb"
+                                    d="m53.753 102.651l2.862 31.942h71.481v-31.942zM128.095 38H48l2.904 31.942h77.191zm0 180.841v-33.233l-.14.037l-35.574-9.605l-2.274-25.476H58.042l4.475 50.154l65.431 18.164z" />
+                                <path fill="#fff"
+                                    d="m167.318 134.593l-3.708 41.426l-35.625 9.616v33.231l65.483-18.148l.48-5.397l7.506-84.092l.779-8.578L208 38h-80.015v31.942h45.009l-2.906 32.709h-42.103v31.942z" />
+                            </g>
+                        </svg>
+                        <h2>Web Development</h2>
+                        <p>Web development is the process of building and maintaining websites and web applications that
+                            are accessible on the internet. </p>
+                        <a href="https://www.google.com/search?q=what+is+web+development&oq=&gs_lcrp=EgZjaHJvbWUqCQgBECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQk2NjcxOGowajeoAgiwAgHxBZCRXRtUrO8_&sourceid=chrome&ie=UTF-8"
+                            target="_blank">more</a>
+                    </form>
+                </div>
+            </div>
+            <!-- childe_3 -->
+            <div class="childe_3">
+                <div class="or">
+                    <form action="form">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256">
+                            <g fill="none">
+                                <rect width="256" height="256" fill="#242938" rx="60" />
+                                <path fill="#fff"
+                                    d="M101.634 182.619s-7.68 4.674 5.345 6.011c15.728 2.004 24.044 1.669 41.407-1.668c0 0 4.674 3.009 11.02 5.344c-39.075 16.696-88.497-1.002-57.772-9.687m-5.009-21.705s-8.35 6.346 4.674 7.679c17.028 1.669 30.391 2.004 53.433-2.667c0 0 3.009 3.341 8.015 5.01c-47.083 14.025-99.85 1.333-66.122-10.019zm92.17 38.07s5.676 4.674-6.346 8.35c-22.376 6.678-93.839 8.685-113.876 0c-7.009-3.009 6.347-7.352 10.686-8.015c4.342-1.002 6.678-1.002 6.678-1.002c-7.68-5.344-51.095 11.02-22.041 15.729c79.813 13.027 145.603-5.676 124.896-15.028zm-83.488-60.781s-36.402 8.685-13.028 11.687c10.019 1.333 29.721 1.002 48.089-.335c15.028-1.334 30.09-4.007 30.09-4.007s-5.345 2.338-9.017 4.674c-37.099 9.693-108.23 5.351-87.858-4.668c17.37-8.35 31.724-7.351 31.724-7.351m65.116 36.401c37.407-19.37 20.037-38.07 8.015-35.731c-3.009.667-4.342 1.334-4.342 1.334s1.001-2.004 3.34-2.667c23.709-8.35 42.413 25.046-7.679 38.07c0 0 .335-.335.666-1.002zm-61.444 52.76c36.067 2.339 91.168-1.334 92.505-18.369c0 0-2.667 6.678-29.72 11.688c-30.722 5.676-68.796 5.009-91.168 1.333c0 0 4.674 4.007 28.386 5.344z" />
+                                <path fill="#f58219"
+                                    d="M147.685 28s20.704 21.039-19.702 52.76c-32.394 25.712-7.351 40.408 0 57.101c-19.035-17.028-32.722-32.059-23.377-46.085C118.331 71.083 156.062 61.064 147.685 28M137 123.842c9.683 11.02-2.667 21.039-2.667 21.039s24.711-12.686 13.359-28.387c-10.354-15.028-18.368-22.376 25.046-47.425c0 0-68.46 17.028-35.731 54.766z" />
+                            </g>
+                        </svg>
+                        <h2>JAVA</h2>
+                        <p>Java is a widely used, platform-independent, object-oriented programming language and
+                            computing platform.</p>
+                        <a href="https://www.google.com/search?q=what+is+java&sca_esv=07aeded15e020cec&sxsrf=AE3TifOdS7nRZQiT0N_thED__aXvqxr48A%3A1750361333996&ei=9WRUaLbQPILF4-EP9eSEmQE&ved=0ahUKEwj2nqqMnP6NAxWC4jgGHXUyIRMQ4dUDCBA&uact=5&oq=what+is+java&gs_lp=Egxnd3Mtd2l6LXNlcnAiDHdoYXQgaXMgamF2YTIKEAAYgAQYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESKNDUPwNWOA6cAF4AZABAJgBkwGgAfYLqgEEMC4xMrgBA8gBAPgBAZgCDaACyQ2oAgrCAgcQIxgnGOoCwgIKECMYJxjJAhjqAsICChAjGIAEGCcYigXCAgQQIxgnwgINEAAYgAQYsQMYQxiKBcICDhAAGIAEGLEDGIMBGIoFwgIEEAAYA5gDH_EFp6C7pt-IpLWSBwQxLjEyoAeKXLIHBDAuMTK4B6oNwgcGMy0xMS4yyAe-AQ&sclient=gws-wiz-serp"
+                            target="_blank">more</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> <hr>
+
+    <!-- skills -->
+     
+    <section class="heading" id="Skills">
+        <h1>My Skills</h1>
+        <div class="skill">
+            <div class="child_5">
+                <h2>3+ Years of Experience</h2>
+                <p>technical and soft skills. Key technical skills include proficiency in HTML, CSS, and JavaScript, along with understanding of responsive design principles, SEO, and content management systems. Soft skills like communication, problem-solving, and collaboration are also crucial for success. </p>
+                <button>HIRE ME NOW</button>
+            </div>
+            <div class="child_6">
+                <div class="first">
+                    <h1>100%</h1>
+                    <p>HTML</p>
+                    <h1>NONE</h1>
+                    <p>Award Winning</p>
+                </div>
+                <div class="second">
+                    <h1>90%</h1>
+                    <p>CSS</p>
+                    <h1>98%</h1>
+                    <p>Client Review</p>
+                </div>
+            </div> 
+        </div>
+    </section> <hr>
+    <!--project-->
+    <section id="proj" class="project">
+        <h1>My Project</h1>
+        <div class="work">
+            <a href="https://www.w3schools.com/html/" target="_blank"><img src="./img/HTML.jpg" alt=""></a>
+            <a href="https://coderszine.com/live-datatables-crud-with-ajax-php-mysql/" target="_blank"><img src="./img/live-datatables-CRUD-ajax-php-mysql-min-1024x574-1.png" alt=""></a>
+            <a href="https://www.w3schools.com/python/" target="_blank"><img src="./img/PY2.jpg" alt=""></a>
+            <a href="https://www.w3schools.com/whatis/" target="_blank"><img src="./img/web_1.jpg" alt=""></a>
+            <a href="https://www.todoist.com/" target="_blank"> <img src="./img/download.jpeg" alt=""></a>
+            <a href="https://www.w3schools.com/java/" target="_blank"><img src="./img/image_d9d449fc4bcb3a9cebb67a272131b7f7-scaled-1-1024x572.jpg" alt=""></a>
+        </div>
+    </section> <hr>
+   
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Get In Touch</h2>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4 text-center mb-4">
+                    <i class="bi bi-geo-alt display-6 text-primary mb-3"></i>
+                    <h5>Address</h5>
+                    <p class="text-white-50">Bangladesh<br>Meherpur City, Mujibnagar</p>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <i class="bi bi-telephone display-6 text-primary mb-3"></i>
+                    <h5>Phone</h5>
+                    <p class="text-white-50">+880 1977861766</p>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <i class="bi bi-envelope display-6 text-primary mb-3"></i>
+                    <h5>Email</h5>
+                    <p class="text-white-50">ratule50@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+
+</html>
